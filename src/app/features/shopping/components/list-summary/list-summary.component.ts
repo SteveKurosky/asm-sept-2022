@@ -10,6 +10,7 @@ import { ShoppingDataService } from '../../services/shopping-data.service';
 })
 export class ListSummaryComponent {
   model: Observable<ShoppingSummaryModel>;
+
   constructor(private service: ShoppingDataService) {
     this.model = service.getData().pipe(
       map((data) => {

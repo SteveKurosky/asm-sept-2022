@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +12,14 @@ import { ShoppingModule } from './features/shopping/shopping.module';
 
 @NgModule({
   declarations: [AppComponent, BrandingComponent, NavigationComponent],
-  imports: [BrowserModule, DashboardModule, AppRoutingModule, ShoppingModule],
+  imports: [
+    BrowserModule,
+    DashboardModule,
+    AppRoutingModule,
+    ShoppingModule,
+    StoreModule.forRoot({}),
+    StoreDevtoolsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
